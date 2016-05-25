@@ -3,23 +3,21 @@ using System.Collections;
 
 public class GM : MonoBehaviour {
 
-    private static GM _instance;
+    private static GM _gm;
     public static GM instance
     {
         get
         {
-            if(!_instance)
+            if(!_gm)
             {
-                _instance = GameObject.Find("GM").GetComponent<GM>();
-                if(!_instance)
+                _gm = GameObject.Find("GM").GetComponent<GM>();
+                if(!_gm)
                 {
-                    GameObject container = new GameObject();
-                    container.name = "GM";
-                    _instance = container.AddComponent<GM>();
+                    GameObject container = new GameObject("GM");
+                    _gm = container.AddComponent<GM>();
                 }
             }
-
-            return _instance;
+            return _gm;
         }
     }
 

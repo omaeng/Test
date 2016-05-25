@@ -2,17 +2,19 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Test : MonoBehaviour {
+public class Test<T> : MonoBehaviour {
 
     public RectTransform _rTrans;
     public float startAngle, presentAngle, endAngle, chVal;
-
+    public BlockGenerator blockG;
+    
     void Awake()
     {
-        _rTrans = GetComponent<RectTransform>();
-        startAngle = 90.0f;
-        endAngle = _rTrans.eulerAngles.z;
-        chVal = -6.0f;
+        //_rTrans = GetComponent<RectTransform>();
+        //startAngle = 90.0f;
+        //endAngle = _rTrans.eulerAngles.z;
+        //chVal = -6.0f;
+        blockG = BlockGenerator.Instance;
     }
 	// Use this for initialization
 	void Start () {
